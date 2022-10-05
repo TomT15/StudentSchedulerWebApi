@@ -1,0 +1,46 @@
+﻿<div class="calendar-container">
+    <h2 class="date"></h2>
+    <div class="calendar">
+        <div class="empty"></div>
+        <div class="weekdays">
+            <div class="col col-1">Monday</div>
+            <div class="col col-2">Tuesday</div>
+            <div class="col col-3">Wednesday</div>
+            <div class="col col-4">Thursday</div>
+            <div class="col col-4">Friday</div>
+        </div>
+        <div class="times">
+            @{
+                var timeIncrements = 15;
+                //var timeIncrementCount = 0;
+                for (var i = 0; i < 9; i++)
+                {
+                    for (var timeCount = 0; timeCount < 4; timeCount++)
+                    {
+                        if (i > 4)
+                        {
+                            if (timeCount == 0)
+                                Html.Raw($"<div class=\"row row-{i}\">{(i - 3).ToString()}: AM </div>");
+                            else
+                                Html.Raw($"<div class=\"row row-{i}\">{(i - 3).ToString()}:{timeCount * timeIncrements} AM </div>");
+                        }
+                        else
+                        {
+                            if (timeCount == 0)
+                                Html.Raw($"<div class=\"row row-{i}\">{(i + 7).ToString()} AM </div>");
+                            else
+                                Html.Raw($"<div class=\"row row-{i}\">{(i + 7).ToString()}:{timeCount * timeIncrements} AM </div>");
+                        }
+                    }
+                }
+            }
+        </div>
+        <div class="contents">
+        @{
+            for(var i = 0; i < 32; i++){
+                Html.Raw($"<div id=\"{i}\"></div>");
+            }
+        }        
+        </div>
+    </div>
+</div>
