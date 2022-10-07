@@ -7,12 +7,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="wwwroot\Controllers\WeatherForecastController.cs" />
-    <Compile Include="wwwroot\Model\WeatherForecast.cs" />
+    <Content Include="Controllers\HomeController.cs" />
+    <Content Include="Controllers\WeatherForecastController.cs" />
+    <Content Include="Model\WeatherForecast.cs" />
+    <Content Include="Views\Home\Index.cshtml.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\Content\StyleSheet.css" />
   </ItemGroup>
 
 </Project>

@@ -1,13 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Text.Encodings.Web;
 
-namespace StudentSchedulerWebApi
+namespace StudentSchedulerWebApi.Controllers
 {
     public class HomeController : Controller
     {
-        [HttpGet]
+        
         public IActionResult Index()
         {
-            return View("~/Views/Home/Index.cshtml");
+            return View();
         }
     }
 }
